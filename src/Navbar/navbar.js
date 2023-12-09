@@ -1,10 +1,13 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
+import { RxHamburgerMenu, RxCross2 } from "react-icons/rx";
+import { useState } from "react";
 
 const Navbar = () => {
+  let [open, setopen] = useState(true);
   return (
     <>
-      <nav className="navbar flex bg-red-600 justify-around items-center text-center px-2 py-2">
+      <nav className="navbar flex bg-red-600 justify-between items-center text-center px-2 py-2">
         <div className="logo">
           <img
             src="https://technowebstore.com/daksh-wordpress/wp-content/uploads/2023/02/logo.png"
@@ -12,33 +15,44 @@ const Navbar = () => {
           />
         </div>
 
-        <div className="menu-link px-4">
-          <ul className="flex">
-            <li className="px-3">
-              <Link to={"/"} className=" text-2xl text-white">
+        <div
+          className={
+            open
+              ? "px-4 hidden mb:block"
+              : "block fixed top-0 left-0 bg-gray-200 w-6/12 h-full z-10 pt-20 rounded-lg"}>
+          <ul className={open ? "flex text-white" : "flex-col"}>
+            <li className={open ? "px-3" : "pt-8"}>
+              <Link to={"/"} className=" text-2xl">
                 Home
               </Link>
             </li>
-            <li className="px-3">
-              <Link to={"/aboutus"} className=" text-2xl text-white">
+            <li className={open ? "px-3" : "pt-8"}>
+              <Link to={"/aboutus"} className=" text-2xl ">
                 About us
               </Link>
             </li>
-            <li className="px-3">
-              <Link to={"/ourpuja"} className=" text-2xl text-white">
+            <li className={open ? "px-3" : "pt-8"}>
+              <Link to={"/ourpuja"} className=" text-2xl">
                 Our Puja{" "}
               </Link>
             </li>
-            <li className="px-3">
-              <Link className=" text-2xl text-white">Pages</Link>
+            <li className={open ? "px-3" : "pt-8"}>
+              <Link className=" text-2xl">Pages</Link>
             </li>
-            <li className="px-3">
-              <Link className=" text-2xl text-white py-3">Contact Us</Link>
+            <li className={open ? "px-3" : "pt-8"}>
+              <Link className=" text-2xl py-3">Contact Us</Link>
             </li>
           </ul>
         </div>
 
-        <div className="phone flex items-center text-white capitalize">
+        <div className="phone flex items-center text-white capitalize px-3">
+          <div onClick={() => setopen(!open)}>
+            {open ? (
+              <RxHamburgerMenu className="text-3xl mx-5 mb:hidden cursor-pointer" />
+            ) : (
+              <RxCross2 className="text-black text-3xl mx-5 mb:hidden absolute left-[38%] top-[4%] z-10 cursor-pointer" />
+            )}
+          </div>
           <img
             src="https://technowebstore.com/daksh-wordpress/wp-content/uploads/2023/02/call.png"
             className="w-12 h-12 mr-2"
