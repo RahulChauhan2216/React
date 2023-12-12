@@ -217,9 +217,9 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="py-10 px-24">
-        <div className="flex w-[100%]">
-          <div className="bg-red-600 py-16 px-6 text-white w-1/4">
+      <div className="py-10 lg:px-24 ">
+        <div className="flex-row w-[100%] md:flex">
+          <div className="bg-red-600 py-16 px-6 text-white w-full md:w-1/4">
             <IoFootsteps className="text-8xl" />
             <ScrollTrigger
               onEnter={() => {
@@ -243,7 +243,7 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="bg-yellow-400 py-16 px-6 text-white w-1/4">
+          <div className="bg-yellow-400 py-16 px-6 text-white w-full md:w-1/4">
             <MdOutlineHandshake className="text-8xl" />
             <ScrollTrigger
               onEnter={() => {
@@ -269,7 +269,7 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="bg-red-600 py-16 px-6 text-white w-1/4">
+          <div className="bg-red-600 py-16 px-6 text-white w-full md:w-1/4">
             <IoFootsteps className="text-8xl" />
             <ScrollTrigger
               onEnter={() => {
@@ -293,7 +293,7 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="bg-yellow-400 py-16 px-6 text-white w-1/4">
+          <div className="bg-yellow-400 py-16 px-6 text-white w-full md:w-1/4">
             <IoFootsteps className="text-8xl" />
             <ScrollTrigger
               onEnter={() => {
