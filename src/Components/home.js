@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, NavLink } from "react-router-dom";
 import { AiOutlineMessage } from "react-icons/ai";
 import { FiCheckCircle } from "react-icons/fi";
 import Aos from "aos";
@@ -24,36 +25,71 @@ const Home = () => {
     {
       name: "Durga Path",
       img: "https://www.jagranimages.com/images/newimg/25092022/25_09_2022-durga_puja_1_23096804.jpg",
+      link: "/durga",
     },
     {
       name: "Vivah Puja",
       img: "https://bookmypooja.online/wp-content/uploads/2022/06/Wedding-Pandit-Book-My-Pooja.jpg",
+      link: "/vivah",
     },
     {
       name: "Rudra Abhishek",
       img: "https://pujavidhis.com/wp-content/uploads/2021/08/Rudrabhishek.jpg",
+      link: "/rudra",
     },
     {
       name: "Kal Sarp",
       img: "https://www.rudraksham.com/pub/media/catalog/product/k/a/kaalsarp.jpg",
+      link: "/kal",
     },
     {
       name: "Shiv Abhishek",
       img: "https://maharashtratimes.com/thumb/81432417/these-are-the-benefits-of-abhishek-on-shivling-81432417.jpg?imgsize=246129&width=1200&height=900&resizemode=75",
+      link: "/shiv",
     },
     {
       name: "Laxmi Puja",
       img: "https://media.istockphoto.com/id/1314780179/photo/goddess-sculpture-in-indian-wedding.jpg?s=612x612&w=0&k=20&c=WijWhkJL7cfQSkrX-c8vntuUM-Faa_C8IFFF0xrAy4U=",
+      link: "/laxmi",
+    },
+  ];
+
+  let data1 = [
+    {
+      name: "Masik Shivratri",
+      data: "April 22,2023",
+      bio: "Masik Shivratri is the great festival of convergence of Shiva and Shakti.Every month chat",
+      img: "https://www.templepurohit.com/wp-content/uploads/2017/06/Masik-Shivaratri-Dates-Vrat-Vidhi-Benefits-and-Importance.jpg",
+    },
+    {
+      name: "Pradosh Vrat",
+      data: "April 28,2023",
+      bio: "Masik Shivratri is the great festival of convergence of Shiva and Shakti.Every month chat",
+      img: "https://akm-img-a-in.tosshub.com/aajtak/images/story/202101/shiva_thumb-sixteen_nine.jpg?size=948:533",
+    },
+    {
+      name: "Mesha Sankranti",
+      data: "April 02,2023",
+      bio: "Masik Shivratri is the great festival of convergence of Shiva and Shakti.Every month chat",
+      img: "https://images.mypandit.com/myPandit_web/images/Content/Mesha-Sankranti.webp",
+    },
+    {
+      name: "Masik Shivratri",
+      data: "April 22,2023",
+      bio: "Masik Shivratri is the great festival of convergence of Shiva and Shakti.Every month chat",
+      img: "https://www.clickastro.com/blog/wp-content/uploads/2021/02/Masik-Shivratri-1200x720.jpg",
     },
   ];
 
   const settings = {
     accessibility: true,
-    // dots: true,
     infinite: true,
-    speed: 500,
+    speed: 2000,
     slidesToShow: 5,
-    slidesToScroll: 5,
+    slidesToScroll: 2,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    arrows: false,
     responsive: [
       {
         breakpoint: 1200,
@@ -61,7 +97,6 @@ const Home = () => {
           slidesToShow: 4,
           slidesToScroll: 4,
           infinite: true,
-          dots: true,
         },
       },
       {
@@ -70,7 +105,6 @@ const Home = () => {
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
-          dots: true,
         },
       },
       {
@@ -83,6 +117,34 @@ const Home = () => {
       },
       {
         breakpoint: 580,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
+  const settings1 = {
+    accessibility: true,
+    infinite: true,
+    speed: 2000,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 980,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 700,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -200,16 +262,21 @@ const Home = () => {
         </p>
         <div className="pt-4 flex">
           <Slider {...settings} className="w-[100%] spp:w-[90%] pp:w-[100%]">
-            {data.map((e) => {
+            {data.map((e, i) => {
               return (
-                <div className=" bg-yellow-400 pt-8 rounded-t-full border-4 border-red-600 h-[275px]">
-                  <div>
+                <div
+                  key={i}
+                  className=" bg-yellow-400 pt-8 rounded-t-full h-[275px]"
+                >
+                  <Link to={e.link}>
                     <img
                       src={e.img}
-                      className="rounded-full w-40 h-40 outline outline-2 outline-offset-8 outline-red-600 mx-auto block"
+                      className="rounded-full w-40 h-40 outline outline-2 outline-offset-8 outline-red-600 mx-auto"
                     />
-                  </div>
-                  <p className="text-center text-xl pt-4">{e.name}</p>
+                  </Link>
+                  <Link to={e.link}>
+                    <p className="text-center text-xl pt-4">{e.name}</p>
+                  </Link>
                 </div>
               );
             })}
@@ -270,7 +337,7 @@ const Home = () => {
           </div>
 
           <div className="bg-red-600 py-16 px-6 text-white w-full md:w-1/4">
-            <IoFootsteps className="text-8xl" />
+            <IoIosPeople className="text-8xl" />
             <ScrollTrigger
               onEnter={() => {
                 setcounterOn(true);
@@ -294,7 +361,7 @@ const Home = () => {
           </div>
 
           <div className="bg-yellow-400 py-16 px-6 text-white w-full md:w-1/4">
-            <IoFootsteps className="text-8xl" />
+            <GiCelebrationFire className="text-8xl" />
             <ScrollTrigger
               onEnter={() => {
                 setcounterOn(true);
@@ -317,6 +384,36 @@ const Home = () => {
             </p>
           </div>
         </div>
+      </div>
+
+      <div className="py-24 px-24 bg-gradient-to-b from-red-600 from-0% via-red-600 via-60% to-white to-40%">
+        <h1 className="text-white text-6xl font-semibold">
+          Upcoming Festivals
+        </h1>
+        <p className="w-6/12 py-4 text-white">
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry’s standard dummy text ever
+          since
+        </p>
+
+        <Slider {...settings1} className="w-[100%] rounded-lg">
+          {data1.map((e, i) => {
+            return (
+              <div
+                key={i}
+                className="pt-12 pb-4 px-3 w-6/12 rounded-xl shadow-lg bg-white"
+              >
+                <img src={e.img} className="h-40 w-40 mx-auto rounded-full" />
+                <h1 className="text-2xl pt-8 text-center font-semibold">
+                  {e.name}
+                </h1>
+                <p className="py-2 text-center text-red-600">{e.data}</p>
+                <p className="mx-auto text-center">{e.bio}</p>
+                <p className="pt-6 text-center">Read More</p>
+              </div>
+            );
+          })}
+        </Slider>
       </div>
     </>
   );

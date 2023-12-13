@@ -19,7 +19,9 @@ const Navbar = () => {
           className={
             open
               ? "px-4 hidden mb:block"
-              : "block fixed top-0 left-0 bg-gray-200 w-6/12 h-full z-10 pt-20 rounded-lg"}>
+              : "block fixed top-0 left-0 bg-gray-200 w-6/12 h-full z-10 pt-20 rounded-lg"
+          }
+        >
           <ul className={open ? "flex text-white" : "flex-col"}>
             <li className={open ? "px-3" : "pt-8"}>
               <Link to={"/"} className=" text-2xl">
@@ -37,10 +39,14 @@ const Navbar = () => {
               </Link>
             </li>
             <li className={open ? "px-3" : "pt-8"}>
-              <Link className=" text-2xl">Pages</Link>
+              <Link to={"/pages"} className=" text-2xl">
+                Pages
+              </Link>
             </li>
             <li className={open ? "px-3" : "pt-8"}>
-              <Link className=" text-2xl py-3">Contact Us</Link>
+              <Link to={"/contactus"} className=" text-2xl py-3">
+                Contact Us
+              </Link>
             </li>
           </ul>
         </div>
