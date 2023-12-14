@@ -15,6 +15,8 @@ import { IoFootsteps, IoPeople } from "react-icons/io5";
 import { MdOutlineHandshake } from "react-icons/md";
 import { IoIosPeople } from "react-icons/io";
 import { GiCelebrationFire } from "react-icons/gi";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+// import { FaArrowRight } from "react-icons/fa";
 
 const Home = () => {
   useEffect(() => {
@@ -78,6 +80,30 @@ const Home = () => {
       data: "April 22,2023",
       bio: "Masik Shivratri is the great festival of convergence of Shiva and Shakti.Every month chat",
       img: "https://www.clickastro.com/blog/wp-content/uploads/2021/02/Masik-Shivratri-1200x720.jpg",
+    },
+  ];
+
+  let data2 = [
+    {
+      img: "https://static01.nyt.com/images/2023/09/21/multimedia/21cf-event-gates-recap-01-hmzj/21cf-event-gates-recap-01-hmzj-superJumbo.jpg",
+      name: "Max Johnson",
+      desi: "Senior Manager",
+      about:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry psum is simply dummy text of the printing and typesetting industry",
+    },
+    {
+      img: "https://www.hindustantimes.com/ht-img/img/2023/09/12/1600x900/Hillary-Clinton-White-House-0_1694523667951_1694524858451.jpg",
+      name: "Harry Johnson",
+      desi: "Head of idea",
+      about:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry psum is simply dummy text of the printing and typesetting industry",
+    },
+    {
+      img: "https://static01.nyt.com/images/2023/09/21/multimedia/21cf-event-gates-recap-01-hmzj/21cf-event-gates-recap-01-hmzj-superJumbo.jpg",
+      name: "Ronny diaz",
+      desi: "Senior Head Manager",
+      about:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry psum is simply dummy text of the printing and typesetting industry",
     },
   ];
 
@@ -151,6 +177,34 @@ const Home = () => {
         },
       },
     ],
+  };
+
+  const settings2 = {
+    accessibility: true,
+    infinite: true,
+    speed: 2000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    arrows: false,
+    // responsive: [
+    //   {
+    //     breakpoint: 980,
+    //     settings: {
+    //       slidesToShow: 2,
+    //       slidesToScroll: 1,
+    //       infinite: true,
+    //     },
+    //   },
+    //   {
+    //     breakpoint: 700,
+    //     settings: {
+    //       slidesToShow: 1,
+    //       slidesToScroll: 1,
+    //     },
+    //   },
+    // ],
   };
 
   let [counterOn, setcounterOn] = useState(false);
@@ -414,6 +468,46 @@ const Home = () => {
             );
           })}
         </Slider>
+      </div>
+
+      <div className="md:gap-6 md:flex px-8 pb-8">
+        <div className="pb-6 md:w-4/12 md:pb-0">
+          <h1 className="text-4xl font-semibold">
+            Our Testimonials
+          </h1>
+          <p className="py-7 text-xl font-semibold text-gray-800">
+            Inspirational words from our very satisfactory clients
+          </p>
+          <div className="flex justify-end gap-4">
+            <button className="px-3 py-3 text-white text-lg bg-red-600 rounded-full">
+              <FaArrowLeft />
+            </button>
+            <button className="px-3 py-3 text-white text-lg bg-red-600 rounded-full">
+              <FaArrowRight />
+            </button>
+          </div>
+        </div>
+
+        <div className="md:w-8/12">
+          <Slider {...settings2}>
+            {data2.map((e, i) => {
+              return (
+                <div className="bg-red-600 rounded-lg h-fit w-8/12 px-6 py-6">
+                  <div className="flex">
+                    <img src={e.img} className="h-24 w-24 rounded-full" />
+                    <div className="pl-8">
+                      <h1 className="text-yellow-400 text-2xl font-semibold">
+                        {e.name}
+                      </h1>
+                      <p className="text-white">{e.desi}</p>
+                    </div>
+                  </div>
+                  <p className="text-white pt-5">{e.about}</p>
+                </div>
+              );
+            })}
+          </Slider>
+        </div>
       </div>
     </>
   );

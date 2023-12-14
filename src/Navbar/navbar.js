@@ -24,29 +24,29 @@ const Navbar = () => {
         >
           <ul className={open ? "flex text-white" : "flex-col"}>
             <li className={open ? "px-3" : "pt-8"}>
-              <Link to={"/"} className=" text-2xl">
+              <NavLink to={"/"} className=" text-2xl">
                 Home
-              </Link>
+              </NavLink>
             </li>
             <li className={open ? "px-3" : "pt-8"}>
-              <Link to={"/aboutus"} className=" text-2xl ">
+              <NavLink to={"/aboutus"} className=" text-2xl ">
                 About us
-              </Link>
+              </NavLink>
             </li>
             <li className={open ? "px-3" : "pt-8"}>
-              <Link to={"/ourpuja"} className=" text-2xl">
+              <NavLink to={"/ourpuja"} className=" text-2xl">
                 Our Puja{" "}
-              </Link>
+              </NavLink>
             </li>
             <li className={open ? "px-3" : "pt-8"}>
-              <Link to={"/pages"} className=" text-2xl">
+              <NavLink to={"/pages"} className=" text-2xl">
                 Pages
-              </Link>
+              </NavLink>
             </li>
             <li className={open ? "px-3" : "pt-8"}>
-              <Link to={"/contactus"} className=" text-2xl py-3">
+              <NavLink to={"/contactus"} className=" text-2xl py-3">
                 Contact Us
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </div>
