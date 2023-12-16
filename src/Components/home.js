@@ -16,7 +16,9 @@ import { MdOutlineHandshake } from "react-icons/md";
 import { IoIosPeople } from "react-icons/io";
 import { GiCelebrationFire } from "react-icons/gi";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-// import { FaArrowRight } from "react-icons/fa";
+import { IoLocationOutline } from "react-icons/io5";
+import { FaPhoneVolume } from "react-icons/fa6";
+import { HiOutlineMailOpen } from "react-icons/hi";
 
 const Home = () => {
   useEffect(() => {
@@ -104,6 +106,29 @@ const Home = () => {
       desi: "Senior Head Manager",
       about:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry psum is simply dummy text of the printing and typesetting industry",
+    },
+  ];
+
+  let data3 = [
+    {
+      date: "April 22,2023",
+      bio: "When worshipped with devotion, God gives inner peace and enables worshippers",
+      img: "https://media.istockphoto.com/id/1179778264/photo/diwali-hindu-festival-of-lights-celebration-diya-oil-lamp-against-dark-background.jpg?s=612x612&w=0&k=20&c=eX_VChU2Gd9Da_AELqA3A1IaKGsNXU3g82qoF5IZrrE=",
+    },
+    {
+      date: "April 28,2023",
+      bio: "There are different ways to worship Lord Shiva.",
+      img: "https://www.saivism.net/images/worship.jpg",
+    },
+    {
+      date: "April 02,2023",
+      bio: "Devotees pray to the Lord to seek mercy and benevolence and overcome",
+      img: "https://vedicyogawisdom.com/wp-content/uploads/2021/12/Krishna-and-Madhavendra-Puri-Copy.jpg",
+    },
+    {
+      date: "April 22,2023",
+      bio: "Lord Shiva, also known as the Rudra, is the destroyer of evil.",
+      img: "https://www.mythoworld.com/wp-content/uploads/2021/03/Lord-Shiva-Tandav-Desktop-Image-HD-e1615450764949.jpeg",
     },
   ];
 
@@ -205,6 +230,34 @@ const Home = () => {
     //     },
     //   },
     // ],
+  };
+
+  const settings3 = {
+    accessibility: true,
+    infinite: true,
+    speed: 2000,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 980,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 700,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   let [counterOn, setcounterOn] = useState(false);
@@ -472,9 +525,7 @@ const Home = () => {
 
       <div className="md:gap-6 md:flex px-8 pb-8">
         <div className="pb-6 md:w-4/12 md:pb-0">
-          <h1 className="text-4xl font-semibold">
-            Our Testimonials
-          </h1>
+          <h1 className="text-4xl font-semibold">Our Testimonials</h1>
           <p className="py-7 text-xl font-semibold text-gray-800">
             Inspirational words from our very satisfactory clients
           </p>
@@ -507,6 +558,79 @@ const Home = () => {
               );
             })}
           </Slider>
+        </div>
+      </div>
+
+      <div className="py-24 px-24 bg-gradient-to-b from-red-600 from-0% via-red-600 via-60% to-white to-40%">
+        <h1 className="text-white text-5xl font-semibold">Our Blogs</h1>
+        <p className="w-6/12 py-6 text-white text-xl">
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry’s standard dummy text ever
+          since
+        </p>
+        <Slider {...settings3} className="w-full">
+          {data3.map((e, i) => {
+            return (
+              <div className="bg-yellow-300 rounded-lg w-6/12 px-4 py-4 h-[450px]">
+                <img src={e.img} className="rounded-lg h-60 w-full" />
+                <p className="text-red-600 py-4 text-sm font-semibold">
+                  {e.date}
+                </p>
+                <p className="text-xl">{e.bio}</p>
+              </div>
+            );
+          })}
+        </Slider>
+      </div>
+
+      <div className="bg-red-600 px-24 py-12 w-full lg:flex">
+        <div className="w-3/12 mr-5">
+          <h1 className="text-white text-3xl font-semibold">Get in touch</h1>
+          <p className="pt-6 flex text-white text-lg">
+            <span className="text-yellow-400 text-3xl pr-3">
+              <IoLocationOutline />
+            </span>
+            4th floor,E-160,West College St. 66 Code New York, United States
+          </p>
+          <p className="pt-6 flex text-white text-lg">
+            <span className="text-yellow-400 text-3xl pr-3">
+              <FaPhoneVolume />
+            </span>
+            +1 3333 ** 444
+          </p>
+          <p className="pt-6 flex text-white text-lg">
+            <span className="text-yellow-400 text-3xl pr-3">
+              <HiOutlineMailOpen />
+            </span>
+            info@example.com
+          </p>
+        </div>
+        {/* -- */}
+        <div className="w-3/12 mr-5 mt-8 lg:mt-0">
+          <h1 className="text-white text-3xl font-semibold">Company</h1>
+          <p className="pt-4 text-white text-lg">About</p>
+          <p className="pt-4 text-white text-lg">Meet Out Team</p>
+          <p className="pt-4 text-white text-lg">Our Portfolio</p>
+          <p className="pt-4 text-white text-lg">Latest News</p>
+          <p className="pt-4 text-white text-lg">Stores</p>
+        </div>
+
+        {/* ----- */}
+        <div className="w-3/12 mr-5 mt-8 lg:mt-0">
+          <h1 className="text-white text-3xl font-semibold">Information</h1>
+          <p className="pt-4 text-white text-lg">Our Leader</p>
+          <p className="pt-4 text-white text-lg">Press Media</p>
+          <p className="pt-4 text-white text-lg">FAQs</p>
+          <p className="pt-4 text-white text-lg">Partner Program</p>
+          <p className="pt-4 text-white text-lg">Browse library</p>
+        </div>
+        {/* -- */}
+        <div className="w-3/12 mt-8 lg:mt-0">
+          <h1 className="text-white text-3xl font-semibold">Resources</h1>
+          <p className="pt-4 text-white text-lg">Support</p>
+          <p className="pt-4 text-white text-lg">Privacy Policy</p>
+          <p className="pt-4 text-white text-lg">Terms of Use</p>
+          <p className="pt-4 text-white text-lg">Help</p>
         </div>
       </div>
     </>
