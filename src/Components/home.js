@@ -267,8 +267,7 @@ const Home = () => {
       <div className="flex py-[21.5vh] bg-blue-100">
         <div className="w-6/12 h-full pl-10 pt-5">
           <h1 className="text-5xl w-4/5">
-            We <span className="text-red-600">Hindus</span> believe In the
-            Vedas.
+            We <span className="text-red-600">Hindus</span> believe In the Vedas.
           </h1>
           <p className="w-4/5 text-2xl pt-6">
             Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -302,14 +301,14 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="py-20 flex">
-        <div className="w-6/12 flex justify-end" data-aos="fade-up">
+      <div className="py-20 md:flex">
+        <div className="md:w-6/12" data-aos="fade-up">
           <img
             src="https://technowebstore.com/daksh-wordpress/wp-content/uploads/2023/04/about-b-1.png"
-            className="md:w-9/12 lg:h-full h-5/6"
+            className="h-96 mx-auto"
           />
         </div>
-        <div className="mx-10 w-6/12" data-aos="fade-up">
+        <div className="mx-10 md:w-6/12" data-aos="fade-up">
           <h1 className="text-4xl pt-5">Beginners Program</h1>
           <p className="py-4 text-xl">
             It is a long established fact that a reader will be distracted by
@@ -584,7 +583,7 @@ const Home = () => {
       </div>
 
       <div className="bg-red-600 px-24 py-12 w-full lg:flex">
-        <div className="w-3/12 mr-5">
+        <div className="lg:w-3/12 mr-5">
           <h1 className="text-white text-3xl font-semibold">Get in touch</h1>
           <p className="pt-6 flex text-white text-lg">
             <span className="text-yellow-400 text-3xl pr-3">
@@ -606,7 +605,7 @@ const Home = () => {
           </p>
         </div>
         {/* -- */}
-        <div className="w-3/12 mr-5 mt-8 lg:mt-0">
+        <div className="lg:w-3/12 mr-5 mt-8 lg:mt-0">
           <h1 className="text-white text-3xl font-semibold">Company</h1>
           <p className="pt-4 text-white text-lg">About</p>
           <p className="pt-4 text-white text-lg">Meet Out Team</p>
@@ -616,7 +615,7 @@ const Home = () => {
         </div>
 
         {/* ----- */}
-        <div className="w-3/12 mr-5 mt-8 lg:mt-0">
+        <div className="lg:w-3/12 mr-5 mt-8 lg:mt-0">
           <h1 className="text-white text-3xl font-semibold">Information</h1>
           <p className="pt-4 text-white text-lg">Our Leader</p>
           <p className="pt-4 text-white text-lg">Press Media</p>
@@ -625,7 +624,7 @@ const Home = () => {
           <p className="pt-4 text-white text-lg">Browse library</p>
         </div>
         {/* -- */}
-        <div className="w-3/12 mt-8 lg:mt-0">
+        <div className="lg:w-3/12 mt-8 lg:mt-0">
           <h1 className="text-white text-3xl font-semibold">Resources</h1>
           <p className="pt-4 text-white text-lg">Support</p>
           <p className="pt-4 text-white text-lg">Privacy Policy</p>
