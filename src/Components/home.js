@@ -267,7 +267,8 @@ const Home = () => {
       <div className="flex py-[21.5vh] bg-blue-100">
         <div className="w-6/12 h-full pl-10 pt-5">
           <h1 className="text-5xl w-4/5">
-            We <span className="text-red-600">Hindus</span> believe In the Vedas.
+            We <span className="text-red-600">Hindus</span> believe In the
+            Vedas.
           </h1>
           <p className="w-4/5 text-2xl pt-6">
             Lorem Ipsum is simply dummy text of the printing and typesetting

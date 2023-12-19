@@ -35,7 +35,7 @@ const Navbar = () => {
             </li>
             <li className={open ? "px-3" : "pt-8"}>
               <NavLink to={"/ourpuja"} className=" text-2xl">
-                Our Puja{" "}
+                Our Puja
               </NavLink>
             </li>
             <li className={open ? "px-3" : "pt-8"}>
