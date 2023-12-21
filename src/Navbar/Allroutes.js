@@ -1,21 +1,22 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
-import AboutUs from "../Components/AboutUs";
-import OurPuja from "../Components/OurPuja";
-import OurPages from "../Components/OurPages";
-import ContactUs from "../Components/contactUs";
-import Error from "../Components/Error";
-import Home from "../Components/home";
-import DurgaPath from "../Components/DurgaPath";
-import Kalsarp from "../Components/Kalsarp";
-import Laxmi from "../Components/Laxmi";
-import Rudra from "../Components/Rudra";
-import Shiv from "../Components/Shiv";
-import Vivah from "../Components/Vivah";
+
+const Home = lazy(() => import("../Components/home"));
+const AboutUs = lazy(() => import("../Components/AboutUs"));
+const OurPuja = lazy(() => import("../Components/OurPuja"));
+const OurPages = lazy(() => import("../Components/OurPages"));
+const ContactUs = lazy(() => import("../Components/contactUs"));
+const Error = lazy(() => import("../Components/Error"));
+const DurgaPath = lazy(() => import("../Components/DurgaPath"));
+const Kalsarp = lazy(() => import("../Components/Kalsarp"));
+const Laxmi = lazy(() => import("../Components/Laxmi"));
+const Rudra = lazy(() => import("../Components/Rudra"));
+const Shiv = lazy(() => import("../Components/Shiv"));
+const Vivah = lazy(() => import("../Components/Vivah"));
 
 const AllRoutes = () => {
   return (
-    <div>
+    <Suspense fallback={<div className="text-3xl font-semibold flex justify-center text-gray-700 pt-20">Loading....</div>}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/aboutus" element={<AboutUs />} />
@@ -30,7 +31,7 @@ const AllRoutes = () => {
         <Route path="/vivah" element={<Vivah />} />
         <Route path="*" element={<Error />} />
       </Routes>
-    </div>
+    </Suspense>
   );
 };
 
