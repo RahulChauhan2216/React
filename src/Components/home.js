@@ -543,7 +543,10 @@ const Home = () => {
           <Slider {...settings2}>
             {data2.map((e, i) => {
               return (
-                <div className="bg-red-600 rounded-lg h-fit w-8/12 px-6 py-6">
+                <div
+                  key={i}
+                  className="bg-red-600 rounded-lg h-fit w-8/12 px-6 py-6"
+                >
                   <div className="flex">
                     <img src={e.img} className="h-24 w-24 rounded-full" />
                     <div className="pl-8">
@@ -571,7 +574,10 @@ const Home = () => {
         <Slider {...settings3} className="w-full">
           {data3.map((e, i) => {
             return (
-              <div className="bg-yellow-300 rounded-lg w-6/12 px-4 py-4 h-[450px]">
+              <div
+                key={i}
+                className="bg-yellow-300 rounded-lg w-6/12 px-4 py-4 h-[450px]"
+              >
                 <img src={e.img} className="rounded-lg h-60 w-full" />
                 <p className="text-red-600 py-4 text-sm font-semibold">
                   {e.date}

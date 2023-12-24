@@ -62,26 +62,26 @@ const Navbar = () => {
               >
                 <li className="px-3">
                   <NavLink
-                    to={"/ourpuj"}
-                    className="text-xl border-b-2 border-gray-600 pb-2 text-gray-800 lg:pr-6"
+                    to={"/laxmi"}
+                    className="text-xl border-b-2 border-gray-600 pb-2 text-gray-800"
                   >
-                    Our Puja 1
+                    Laxmi Puja
                   </NavLink>
                 </li>
                 <li className={open ? "px-3 my-6" : "py-6"}>
                   <NavLink
-                    to={"/ourpuj"}
-                    className=" text-xl border-b-2 border-gray-600 pb-2 text-gray-800 lg:pr-6"
+                    to={"/rudra"}
+                    className=" text-xl border-b-2 border-gray-600 pb-2 text-gray-800"
                   >
-                    Our Puja 2
+                    Rudra Abhishek
                   </NavLink>
                 </li>
                 <li className="px-3">
                   <NavLink
-                    to={"/ourpuj"}
-                    className=" text-xl border-b-2 border-gray-600 pb-2 text-gray-800 lg:pr-6"
+                    to={"/kal"}
+                    className=" text-xl border-b-2 border-gray-600 pb-2 text-gray-800"
                   >
-                    Our Puja 3
+                    KalSarp Puja
                   </NavLink>
                 </li>
               </ul>
