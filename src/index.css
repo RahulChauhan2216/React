@@ -3,11 +3,13 @@
 @tailwind utilities;
 
 .slick-slide {
-  /* margin-right: 15px; */
-  /* margin-left: 15px; */
   padding-right: 10px;
 }
 
 .active {
    color:black
+}
+
+*{
+  scroll-behavior: smooth;
 }

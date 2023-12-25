@@ -26,33 +26,38 @@ const Navbar = () => {
         >
           <ul className={open ? "flex text-white h-full" : "flex-col"}>
             <li className={open ? "px-3 flex items-center" : "pt-8"}>
-              <NavLink to={"/"} className=" text-2xl">
+              <NavLink
+                to={"/"}
+                className=" text-2xl"
+                onClick={() => setopen(true)}
+              >
                 Home
               </NavLink>
             </li>
             <li className={open ? "px-3 flex items-center" : "pt-8"}>
-              <NavLink to={"/aboutus"} className=" text-2xl ">
+              <NavLink
+                to={"/aboutus"}
+                className=" text-2xl"
+                onClick={() => setopen(true)}
+              >
                 About us
               </NavLink>
             </li>
             <li
               className={
-                open ? "px-3 flex items-center [&>ul]:hover:block" : "pt-8"
+                open
+                  ? "px-3 flex items-center [&>ul]:hover:block text-2xl"
+                  : "pt-8 text-2xl"
               }
             >
-              <NavLink
-                to={"/ourpuja"}
-                className=" text-2xl flex justify-center"
-              >
-                Our Puja{" "}
-                <button onClick={() => setvisible(!visible)}>
-                  {visible ? (
-                    <FaAngleDown className="relative lg:top-1 lg:left-1 left-5" />
-                  ) : (
-                    <FaAngleUp className="relative lg:top-1 lg:left-1 left-5" />
-                  )}
-                </button>
-              </NavLink>
+              Our Puja
+              <button onClick={() => setvisible(!visible)}>
+                {visible ? (
+                  <FaAngleDown className="relative lg:top-1 lg:left-1 left-5" />
+                ) : (
+                  <FaAngleUp className="relative lg:top-1 lg:left-1 left-5" />
+                )}
+              </button>
               <ul
                 className={
                   visible
@@ -64,6 +69,7 @@ const Navbar = () => {
                   <NavLink
                     to={"/laxmi"}
                     className="text-xl border-b-2 border-gray-600 pb-2 text-gray-800"
+                    onClick={() => setopen(true)}
                   >
                     Laxmi Puja
                   </NavLink>
@@ -72,6 +78,7 @@ const Navbar = () => {
                   <NavLink
                     to={"/rudra"}
                     className=" text-xl border-b-2 border-gray-600 pb-2 text-gray-800"
+                    onClick={() => setopen(true)}
                   >
                     Rudra Abhishek
                   </NavLink>
@@ -80,6 +87,7 @@ const Navbar = () => {
                   <NavLink
                     to={"/kal"}
                     className=" text-xl border-b-2 border-gray-600 pb-2 text-gray-800"
+                    onClick={() => setopen(true)}
                   >
                     KalSarp Puja
                   </NavLink>
@@ -87,12 +95,20 @@ const Navbar = () => {
               </ul>
             </li>
             <li className={open ? "px-3  flex items-center" : "pt-8"}>
-              <NavLink to={"/pages"} className=" text-2xl">
+              <NavLink
+                to={"/pages"}
+                className=" text-2xl"
+                onClick={() => setopen(true)}
+              >
                 Pages
               </NavLink>
             </li>
             <li className={open ? "px-3 flex items-center" : "pt-8"}>
-              <NavLink to={"/contactus"} className=" text-2xl py-3">
+              <NavLink
+                to={"/contactus"}
+                className=" text-2xl py-3"
+                onClick={() => setopen(true)}
+              >
                 Contact Us
               </NavLink>
             </li>
@@ -109,7 +125,7 @@ const Navbar = () => {
           </div>
           <img
             src="https://technowebstore.com/daksh-wordpress/wp-content/uploads/2023/02/call.png"
-            className="w-9 h-9 mr-2"
+            className="w-9 h-9 mr-2 hidden smm:block"
           />
           <div>
             <p>Call for appointment</p>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AiOutlineMessage } from "react-icons/ai";
 import { FiCheckCircle } from "react-icons/fi";
 import Aos from "aos";
@@ -213,23 +213,6 @@ const Home = () => {
     autoplay: true,
     autoplaySpeed: 2000,
     arrows: false,
-    // responsive: [
-    //   {
-    //     breakpoint: 980,
-    //     settings: {
-    //       slidesToShow: 2,
-    //       slidesToScroll: 1,
-    //       infinite: true,
-    //     },
-    //   },
-    //   {
-    //     breakpoint: 700,
-    //     settings: {
-    //       slidesToShow: 1,
-    //       slidesToScroll: 1,
-    //     },
-    //   },
-    // ],
   };
 
   const settings3 = {
