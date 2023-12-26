@@ -19,8 +19,13 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { IoLocationOutline } from "react-icons/io5";
 import { FaPhoneVolume } from "react-icons/fa6";
 import { HiOutlineMailOpen } from "react-icons/hi";
+import { FaArrowUp } from "react-icons/fa";
 
 const Home = () => {
+  const toTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   useEffect(() => {
     Aos.init({ duration: 2000 });
   }, []);
@@ -621,6 +626,18 @@ const Home = () => {
           <p className="pt-4 text-white text-lg">Terms of Use</p>
           <p className="pt-4 text-white text-lg">Help</p>
         </div>
+      </div>
+
+      <div className="flex justify-around items-center py-8 bg-yellow-400 font-semibold">
+        <p className="px-4">
+          Copyright © 2023 Daksh-wordpress | Powered by Daksh-wordpress
+        </p>
+        <button
+          className="px-4 py-4 bg-red-600 rounded-full mx-3"
+          onClick={toTop}
+        >
+          <FaArrowUp />
+        </button>
       </div>
     </>
   );

@@ -11,20 +11,22 @@ const Navbar = () => {
     <>
       <nav className="navbar flex bg-red-600 justify-between items-center text-center px-2 h-24 relative">
         <div className="logo">
-          <img
-            src="https://technowebstore.com/daksh-wordpress/wp-content/uploads/2023/02/logo.png"
-            className="w-44"
-          />
+          <Link to={"/"}>
+            <img
+              src="https://technowebstore.com/daksh-wordpress/wp-content/uploads/2023/02/logo.png"
+              className="w-44"
+            />
+          </Link>
         </div>
 
         <div
           className={
             open
               ? "px-4 hidden lg:block h-full cursor-pointer"
-              : "block fixed top-0 left-0 bg-gray-200 w-6/12 h-full z-10 pt-20 rounded-lg"
+              : "fixed top-0 left-0 bg-gray-200 w-6/12 h-full z-10 pt-20 rounded-lg"
           }
         >
-          <ul className={open ? "flex text-white h-full" : "flex-col"}>
+          <ul className={open ? "flex text-white h-full" : "block"}>
             <li className={open ? "px-3 flex items-center" : "pt-8"}>
               <NavLink
                 to={"/"}
@@ -100,7 +102,7 @@ const Navbar = () => {
                 className=" text-2xl"
                 onClick={() => setopen(true)}
               >
-                Pages
+                Services
               </NavLink>
             </li>
             <li className={open ? "px-3 flex items-center" : "pt-8"}>
