@@ -22,7 +22,7 @@ const AllRoutes = () => {
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/ourpuja" element={<OurPuja />} />
         <Route path="/pages" element={<OurPages />} />
-        <Route path="/contactus" element={<ContactUs />} />
+        <Route path="/Contactus" element={<ContactUs />} />
         <Route path="/durga" element={<DurgaPath />} />
         <Route path="/kal" element={<Kalsarp />} />
         <Route path="/laxmi" element={<Laxmi />} />

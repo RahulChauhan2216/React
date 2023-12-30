@@ -5,7 +5,7 @@ import { MdOutlineLocationOn } from "react-icons/md";
 import { IoLocationOutline } from "react-icons/io5";
 import { FaArrowUp } from "react-icons/fa";
 
-const contactUs = () => {
+const ContactUs = () => {
   const toTop = () => {
     window.scrollTo(0, 0);
   };
@@ -170,4 +170,4 @@ const contactUs = () => {
   );
 };
 
-export default contactUs;
+export default ContactUs;

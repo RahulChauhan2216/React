@@ -107,7 +107,7 @@ const Navbar = () => {
             </li>
             <li className={open ? "px-3 flex items-center" : "pt-8"}>
               <NavLink
-                to={"/contactus"}
+                to={"/Contactus"}
                 className=" text-2xl py-3"
                 onClick={() => setopen(true)}
               >

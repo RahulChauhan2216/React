@@ -1,10 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import { IoLocationOutline } from "react-icons/io5";
 import { FaPhoneVolume } from "react-icons/fa6";
 import { HiOutlineMailOpen } from "react-icons/hi";
 import { FaArrowUp } from "react-icons/fa";
+import { MdPassword } from "react-icons/md";
 
 const OurPages = () => {
+  const [fname, setFname] = useState("");
+  const [email, setEmail] = useState("");
+  const [mobno, setMobno] = useState("");
+
+  const validateForm = (e) => {
+    e.preventDefault();
+    const dot = email.length - email.indexOf(".");
+    if (fname.length < 2) {
+      alert("Invalid Form, First name must required");
+      return;
+    }
+    if (email.length < 5 && email.indexOf("@") <= 0 && dot < 3) {
+      alert("Invalid Form, Email must required");
+      return;
+    }
+
+    if (mobno.length !== 10) {
+      alert("plaese enter valid mobno");
+      return;
+    }
+  };
+
   const toTop = () => {
     window.scrollTo(0, 0);
   };
@@ -88,29 +111,34 @@ const OurPages = () => {
 
         <div className="bg-yellow-300 px-10 pt-6 pb-16 border-2 lg:w-[40%] h-fit">
           <h1 className="text-2xl font-semibold pb-3">Request for Help</h1>
-          <input
-            type="text"
-            className="w-full rounded-sm py-2 pl-3"
-            placeholder="Name"
-          ></input>
-          <input
-            type="email"
-            className="w-full rounded-sm my-5 pl-3 py-2"
-            placeholder="Email"
-          ></input>
-          <input
-            type="number"
-            className="w-full rounded-sm pl-3 py-2"
-            placeholder="Mobile"
-          ></input>
-          <textarea
-            rows={4}
-            className="w-full rounded-sm my-5 pl-3 py-2 resize-none"
-            placeholder="Message"
-          />
-          <button className="bg-red-600 text-white px-4 py-2 w-full text-lg block mx-auto">
-            Submit
-          </button>
+          <form method="post">
+            <input
+              className="w-full rounded-sm py-2 pl-3"
+              placeholder="Name"
+              onChange={(e) => setFname(e.target.value)}
+            ></input>
+            <input
+              className="w-full rounded-sm my-5 pl-3 py-2"
+              placeholder="Email"
+              onChange={(e) => setEmail(e.target.value)}
+            ></input>
+            <input
+              className="w-full rounded-sm pl-3 py-2"
+              placeholder="Mobile"
+              onChange={(e) => setMobno(e.target.value)}
+            ></input>
+            <textarea
+              rows={4}
+              className="w-full rounded-sm my-5 pl-3 py-2 resize-none"
+              placeholder="Message"
+            />
+            <button
+              className="bg-red-600 text-white px-4 py-2 w-full text-lg block mx-auto"
+              onClick={validateForm}
+            >
+              Submit
+            </button>
+          </form>
         </div>
       </div>
 
