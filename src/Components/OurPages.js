@@ -3,7 +3,7 @@ import { IoLocationOutline } from "react-icons/io5";
 import { FaPhoneVolume } from "react-icons/fa6";
 import { HiOutlineMailOpen } from "react-icons/hi";
 import { FaArrowUp } from "react-icons/fa";
-import { MdPassword } from "react-icons/md";
+import Swal from "sweetalert2";
 
 const OurPages = () => {
   const [fname, setFname] = useState("");
@@ -12,12 +12,11 @@ const OurPages = () => {
 
   const validateForm = (e) => {
     e.preventDefault();
-    const dot = email.length - email.indexOf(".");
     if (fname.length < 2) {
       alert("Invalid Form, First name must required");
       return;
     }
-    if (email.length < 5 && email.indexOf("@") <= 0 && dot < 3) {
+    if (email.length < 5 && email.indexOf("@") == 0) {
       alert("Invalid Form, Email must required");
       return;
     }
@@ -25,6 +24,14 @@ const OurPages = () => {
     if (mobno.length !== 10) {
       alert("plaese enter valid mobno");
       return;
+    } else {
+      Swal.fire({
+        title: "Success!",
+        text: "You successfully submitted the form!",
+        icon: "success",
+      }).then(function () {
+        window.location.href = "/";
+      });
     }
   };
 
