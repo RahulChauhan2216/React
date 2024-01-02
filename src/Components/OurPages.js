@@ -16,7 +16,20 @@ const OurPages = () => {
       alert("Invalid Form, First name must required");
       return;
     }
-    if (email.length < 5 && email.indexOf("@") == 0) {
+
+    if (email.indexOf("@") == 0) {
+      alert("Invalid Form, Email must required");
+      return;
+    }
+    if (!email.includes(".")) {
+      alert("Invalid Form, Email must required");
+      return;
+    }
+    if (email.length < 10) {
+      alert("Invalid Form, Email must required");
+      return;
+    }
+    if (email.length - email.indexOf(".") <= 2) {
       alert("Invalid Form, Email must required");
       return;
     }
@@ -118,7 +131,7 @@ const OurPages = () => {
 
         <div className="bg-yellow-300 px-10 pt-6 pb-16 border-2 lg:w-[40%] h-fit">
           <h1 className="text-2xl font-semibold pb-3">Request for Help</h1>
-          <form method="post">
+          <form method="POST">
             <input
               className="w-full rounded-sm py-2 pl-3"
               placeholder="Name"
